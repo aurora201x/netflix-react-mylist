@@ -2,35 +2,34 @@ const ADD = "ADD";
 const REMOVE = "REMOVE";
 const GET = "GET";
 
-const add = id => {
+const add = (id) => {
   return {
     type: ADD,
-    id
+    id,
   };
 };
 
-const remove = id => {
+const remove = (id) => {
   return {
     type: REMOVE,
-    id
+    id,
   };
 };
 
-const getData = data => {
+const getData = (data) => {
   return {
     type: GET,
-    data
+    data,
   };
 };
 
-const fetchData = () => dispatch => {
+const fetchData = () => (dispatch) => {
   fetch("./data.json")
-    .then(res => res.json())
-    .then(data => {
-      // console.log(data);
+    .then((res) => res.json())
+    .then((data) => {
       dispatch(getData(data));
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
 };
