@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import List from "./component/List";
 import { fetchData, removeFromList, addToList } from "./redux/actions";
 
-function ListFrame(props) {
+function App(props) {
   const { fetchData, removeFromList, addToList } = props;
 
   useEffect(() => {
@@ -80,6 +80,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const Container = connect(mapStateToProps, mapDispatchToProps)(ListFrame);
+const Container = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default Container;
