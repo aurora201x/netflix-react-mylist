@@ -2,14 +2,14 @@ const ADD = "ADD";
 const REMOVE = "REMOVE";
 const GET = "GET";
 
-const add = (id) => {
+const addToList = (id) => {
   return {
     type: ADD,
     id,
   };
 };
 
-const remove = (id) => {
+const removeFromList = (id) => {
   return {
     type: REMOVE,
     id,
@@ -34,4 +34,4 @@ const fetchData = () => (dispatch) => {
     });
 };
 
-export { ADD, REMOVE, GET, add, remove, fetchData };
+export { ADD, REMOVE, GET, addToList, removeFromList, fetchData };
