@@ -1,12 +1,12 @@
-import { GET, ADD, REMOVE } from "./actions";
+import { GET_MOVIE, ADD_MOVIE, REMOVE_MOVIE } from "./actions";
 
 const initialState = { mylist: [], recommendations: [] };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET:
+    case GET_MOVIE:
       return { ...action.data };
-    case ADD:
+    case ADD_MOVIE:
       // When click "Add" button, the movie will be removed from "recommendations" and added to "mylist"
       return {
         recommendations: state.recommendations.filter(
@@ -17,7 +17,7 @@ const reducer = (state = initialState, action) => {
           ...state.mylist,
         ],
       };
-    case REMOVE:
+    case REMOVE_MOVIE:
       // When click "Remove" button, the movie will be added to "recommendations" and removed from "mylist"
       return {
         recommendations: [

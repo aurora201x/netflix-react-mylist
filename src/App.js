@@ -7,11 +7,13 @@ import { fetchData, removeFromList, addToList } from "./redux/actions";
 function App(props) {
   const { fetchData, removeFromList, addToList } = props;
 
+  // Use Hooks
   useEffect(() => {
     fetchData(); // Get the initial data from json server database
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Add & Remove in one function
+  // Add & Remove the movie from "mylist" in one function
   const handleChange = (id, name) => {
     if (name === "My List") {
       return removeFromList(id);

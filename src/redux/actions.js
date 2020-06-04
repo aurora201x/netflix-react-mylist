@@ -1,24 +1,24 @@
-const ADD = "ADD";
-const REMOVE = "REMOVE";
-const GET = "GET";
+const ADD_MOVIE = "ADD_MOVIE";
+const REMOVE_MOVIE = "REMOVE_MOVIE";
+const GET_MOVIE = "GET_MOVIE";
 
 const addToList = (id) => {
   return {
-    type: ADD,
+    type: ADD_MOVIE,
     id,
   };
 };
 
 const removeFromList = (id) => {
   return {
-    type: REMOVE,
+    type: REMOVE_MOVIE,
     id,
   };
 };
 
 const getData = (data) => {
   return {
-    type: GET,
+    type: GET_MOVIE,
     data,
   };
 };
@@ -34,4 +34,11 @@ const fetchData = () => (dispatch) => {
     });
 };
 
-export { ADD, REMOVE, GET, addToList, removeFromList, fetchData };
+export {
+  ADD_MOVIE,
+  REMOVE_MOVIE,
+  GET_MOVIE,
+  addToList,
+  removeFromList,
+  fetchData,
+};
