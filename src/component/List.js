@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function List({ item: { id, img, title }, name, handleChange }) {
+export default function List(props) {
+  const {
+    item: { id, img, title },
+    name,
+    handleChange,
+  } = props;
+
   return (
     <li className={name} key={id}>
       <div className="movie">
